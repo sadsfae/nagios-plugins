@@ -43,8 +43,10 @@ This is a collection of miscellaneous Nagios plugins.
          - perl-HTML-Template
          - perl-Nagios-Plugin
          - perl-CGI
-      - perl-Net-DBus
+         - perl-Net-DBus
    * __Installation:__
+      - Apply selinux policy
+         * semodule -i nrpe_murmur.pp
       - Copy to check_murmur to /usr/lib64/nagios/plugins
       - Set 'dbus=system' in mumble-server.ini
       - Copy associated dbus-murmurd.conf to /etc/dbus-1/system.d/
@@ -60,5 +62,6 @@ This is a collection of miscellaneous Nagios plugins.
 │   └── nrpe_mdadm.pp
 └── nagios-plugin-check-mumble
     ├── check_murmur
-    └── dbus-murmurd.conf
+    ├── dbus-murmurd.conf
+    └── nrpe_murmur.pp
 ```
