@@ -11,11 +11,12 @@ This is a collection of miscellaneous Nagios plugins.
       - /etc/sudoers access for the nrpe user to run virsh list --all
          - nrpe ALL=(ALL) NOPASSWD:/usr/bin/virsh list --all
       - selinux policy module: nrpe_virsh_check.pp
-         - semodule -i nrpe_virsh_check.pp
    * Installation:
-      - Copy to check_libvirt /usr/lib64/nagios/plugins
+      - Apply selinux policy
+         * semodule -i nrpe_virsh_check.pp
+      - Copy check_libvirt to /usr/lib64/nagios/plugins
       - Use via nrpe: /etc/nagios/nrpe.cfg
-         - command[check_libvirt]=/usr/lib64/nagios/plugins/check_libvirt
+         * command[check_libvirt]=/usr/lib64/nagios/plugins/check_libvirt
  
 **nagios-plugin-check-mdadm**
    - Checks mdadm Linux RAID status
@@ -25,11 +26,12 @@ This is a collection of miscellaneous Nagios plugins.
       - /etc/sudoers access for the nrpe user to run the check
          - nrpe ALL=(ALL) NOPASSWD:/usr/lib64/nagios/plugins/check_mdadm
       - selinux policy module: nrpe_mdadm.pp
-         - semodule -i nrpe_mdadm.pp
    * Installation:
+      - Apply selinux policy
+         * semodule -i nrpe_mdadm.pp
       - Copy check_mdadm to /usr/lib64/nagios/plugins
       - Use via nrpe: /etc/nagios/nrpe.cfg
-         - command[check_raid]=/usr/lib64/nagios/plugins/check_raid
+         * command[check_raid]=/usr/lib64/nagios/plugins/check_raid
 
 **nagios-plugin-check-mumble**
    - Checks status of a local mumble server, used with nrpe
@@ -45,10 +47,10 @@ This is a collection of miscellaneous Nagios plugins.
    * Installation:
       - Copy to check_murmur to /usr/lib64/nagios/plugins
       - Set 'dbus=system' in mumble-server.ini
-      - Copy associated /etc/dbus-1/system.d/murmurd.conf to system
+      - Copy associated dbus-murmurd.conf to /etc/dbus-1/system.d/
       - Reboot (or restart DBUS without rebooting somehow)
       - Use via nrpe: /etc/nagios/nrpe.cfg
-         - command[check_murmur]=/usr/lib64/nagios/plugins/check_murmur
+         * command[check_murmur]=/usr/lib64/nagios/plugins/check_murmur
 ```
 ├── nagios-plugin-check-libvirt
 │   ├── check_libvirt
