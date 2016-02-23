@@ -7,11 +7,11 @@ This is a collection of miscellaneous Nagios plugins.
    - Checks output of virsh list --all for running VM's
    - Errors when a VM is in a shutdown state
    - Original Credit: Karl Rink <krink@csun.edu>
-   * Requirements:
+   * __Requirements:__
       - /etc/sudoers access for the nrpe user to run virsh list --all
          - nrpe ALL=(ALL) NOPASSWD:/usr/bin/virsh list --all
       - selinux policy module: nrpe_virsh_check.pp
-   * Installation:
+   * __Installation:__
       - Apply selinux policy
          * semodule -i nrpe_virsh_check.pp
       - Copy check_libvirt to /usr/lib64/nagios/plugins
@@ -22,11 +22,11 @@ This is a collection of miscellaneous Nagios plugins.
    - Checks mdadm Linux RAID status
    - Displays status if in check or rebuild state
    - Original credit: Sebastian Grewe
-   * Requirements: 
+   * __Requirements:__ 
       - /etc/sudoers access for the nrpe user to run the check
          - nrpe ALL=(ALL) NOPASSWD:/usr/lib64/nagios/plugins/check_mdadm
       - selinux policy module: nrpe_mdadm.pp
-   * Installation:
+   * __Installation:__
       - Apply selinux policy
          * semodule -i nrpe_mdadm.pp
       - Copy check_mdadm to /usr/lib64/nagios/plugins
@@ -37,14 +37,14 @@ This is a collection of miscellaneous Nagios plugins.
    - Checks status of a local mumble server, used with nrpe
    - Displays status and number of connected users via DBUS
    - Modified from: http://blog.ip.v4.me.uk/mumble-murmur-nagios-plugin/
-   * Requirements:
+   * __Requirements:__
       - Perl Packages:
          - perl-Monitoring-Plugin 
          - perl-HTML-Template
          - perl-Nagios-Plugin
          - perl-CGI
       - perl-Net-DBus
-   * Installation:
+   * __Installation:__
       - Copy to check_murmur to /usr/lib64/nagios/plugins
       - Set 'dbus=system' in mumble-server.ini
       - Copy associated dbus-murmurd.conf to /etc/dbus-1/system.d/
