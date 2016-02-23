@@ -26,8 +26,8 @@ This is a collection of miscellaneous Nagios plugins.
       - Copy to check_libvirt /usr/lib64/nagios/plugins
       - Use via nrpe: /etc/nagios/nrpe.cfg
          - command[check_libvirt]=/usr/lib64/nagios/plugins/check_libvirt
-
- **nagios-plugin-check-mdadm**
+ 
+**nagios-plugin-check-mdadm**
    - Checks mdadm Linux RAID status
    - Displays status if in check or rebuild state
    - Original credit: Sebastian Grewe
@@ -51,8 +51,8 @@ This is a collection of miscellaneous Nagios plugins.
          - perl-HTML-Template
          - perl-Nagios-Plugin
          - perl-CGI
-	 - perl-Net-DBus
-   - Installation:
+      - perl-Net-DBus
+   * Installation:
       - Copy to check_murmur to /usr/lib64/nagios/plugins
       - Set 'dbus=system' in mumble-server.ini
       - Copy associated /etc/dbus-1/system.d/murmurd.conf to system
