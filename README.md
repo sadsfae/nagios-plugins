@@ -2,19 +2,9 @@ nagios-plugins
 ===================
 
 This is a collection of miscellaneous Nagios plugins.
-```
-├── nagios-plugin-check-libvirt
-│   ├── check_kvm
-│   └── nrpe_virsh_check.pp
-├── nagios-plugin-check-mdadm
-│   ├── check_raid
-│   └── nrpe_mdadm.pp
-└── nagios-plugin-check-mumble
-    ├── check_murmur
-        └── dbus-murmurd.conf
-```
+
 **nagios-plugin-check-libvirt**
-   - Checks output of virsh list --all for running VM
+   - Checks output of virsh list --all for running VM's
    - Errors when a VM is in a shutdown state
    - Original Credit: Karl Rink <krink@csun.edu>
    * Requirements:
@@ -59,3 +49,14 @@ This is a collection of miscellaneous Nagios plugins.
       - Reboot (or restart DBUS without rebooting somehow)
       - Use via nrpe: /etc/nagios/nrpe.cfg
          - command[check_murmur]=/usr/lib64/nagios/plugins/check_murmur
+```
+├── nagios-plugin-check-libvirt
+│   ├── check_libvirt
+│   └── nrpe_virsh_check.pp
+├── nagios-plugin-check-mdadm
+│   ├── check_raid
+│   └── nrpe_mdadm.pp
+└── nagios-plugin-check-mumble
+    ├── check_murmur
+    └── dbus-murmurd.conf
+```
