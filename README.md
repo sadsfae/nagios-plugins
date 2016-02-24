@@ -9,14 +9,14 @@ This is a collection of miscellaneous Nagios plugins.
    - Original Credit: Karl Rink <krink@csun.edu>
    * __Requirements:__
       - /etc/sudoers access for the nrpe user to run virsh list --all
-         - nrpe ALL=(ALL) NOPASSWD:/usr/bin/virsh list --all
+         - `nrpe ALL=(ALL) NOPASSWD:/usr/bin/virsh list --all`
       - selinux policy module: nrpe_virsh_check.pp
    * __Installation:__
       - Apply selinux policy
-         * semodule -i nrpe_virsh_check.pp
-      - Copy check_libvirt to /usr/lib64/nagios/plugins
+         * `semodule -i nrpe_virsh_check.pp`
+      - Copy `check_libvirt` to `/usr/lib64/nagios/plugins`
       - Use via nrpe: /etc/nagios/nrpe.cfg
-         * command[check_libvirt]=/usr/lib64/nagios/plugins/check_libvirt
+         * `command[check_libvirt]=/usr/lib64/nagios/plugins/check_libvirt`
  
 **nagios-plugin-check-mdadm**
    - Checks mdadm Linux RAID status
@@ -24,14 +24,14 @@ This is a collection of miscellaneous Nagios plugins.
    - Original credit: Sebastian Grewe
    * __Requirements:__ 
       - /etc/sudoers access for the nrpe user to run the check
-         - nrpe ALL=(ALL) NOPASSWD:/usr/lib64/nagios/plugins/check_mdadm
+         - `nrpe ALL=(ALL) NOPASSWD:/usr/lib64/nagios/plugins/check_mdadm`
       - selinux policy module: nrpe_mdadm.pp
    * __Installation:__
       - Apply selinux policy
-         * semodule -i nrpe_mdadm.pp
-      - Copy check_mdadm to /usr/lib64/nagios/plugins
+         * `semodule -i nrpe_mdadm.pp`
+      - Copy `check_mdadm` to `/usr/lib64/nagios/plugins`
       - Use via nrpe: /etc/nagios/nrpe.cfg
-         * command[check_raid]=/usr/lib64/nagios/plugins/check_raid
+         * `command[check_raid]=/usr/lib64/nagios/plugins/check_raid`
 
 **nagios-plugin-check-mumble**
    - Checks status of a local mumble server, used with nrpe
@@ -45,16 +45,16 @@ This is a collection of miscellaneous Nagios plugins.
          - perl-CGI
          - perl-Net-DBus
    * __Installation:__
-      - Apply selinux policies (DBUS is a minefield)
-         * semodule -i nrpe_murmur.pp
-         * semodule -i nrpe_dbus_murmur.pp
-         * semodule -i nrpe_dbus_introspect.pp
-      - Copy to check_murmur to /usr/lib64/nagios/plugins
-      - Set 'dbus=system' in mumble-server.ini
-      - Copy associated dbus-murmurd.conf to /etc/dbus-1/system.d/
+      - Apply selinux policies (DBUS is an AVC minefield)
+         * `semodule -i nrpe_murmur.pp`
+         * `semodule -i nrpe_dbus_murmur.pp`
+         * `semodule -i nrpe_dbus_introspect.pp`
+      - Copy `check_murmur` to `/usr/lib64/nagios/plugins`
+      - Set `dbus=system` in `mumble-server.ini`
+      - Copy `dbus-murmurd.conf` to `/etc/dbus-1/system.d/`
       - Reboot (or restart DBUS without rebooting somehow)
       - Use via nrpe: /etc/nagios/nrpe.cfg
-         * command[check_murmur]=/usr/lib64/nagios/plugins/check_murmur
+         * `command[check_murmur]=/usr/lib64/nagios/plugins/check_murmur`
 ```
 ├── nagios-plugin-check-libvirt
 │   ├── check_libvirt
