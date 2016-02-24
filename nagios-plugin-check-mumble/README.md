@@ -27,3 +27,8 @@ nagios-plugin-check-mumble
          * `command[check_murmur]=/usr/lib64/nagios/plugins/check_murmur`
    * __Output__
       - `MURMUR OK | users=3;;`
+         - Note: Nagios doesn't like "|" so you can use this prune it a bit, it may not display users otherwise.
+         - `command|check_murmur=/usr/lib64/nagios/plugins/check_murmur | sed 's/|/-/' | sed 's/;;//' | sed 's/users/Current Users/' | sed 's/=/ = /'`
+	 - Output: `MURMUR OK - Current Users = 0`
+      - You can also specify -w WARNINGNUMBER -c CRITICALNUMBER if you want to put thresholds on connected users.
+         - `command|check_murmur=/usr/lib64/nagios/plugins/check_murmur -w 10 -c 20`
