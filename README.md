@@ -45,8 +45,10 @@ This is a collection of miscellaneous Nagios plugins.
          - perl-CGI
          - perl-Net-DBus
    * __Installation:__
-      - Apply selinux policy
+      - Apply selinux policies (DBUS is a minefield)
          * semodule -i nrpe_murmur.pp
+	 * semodule -i nrpe_dbus_murmur.pp
+	 * semodule -i nrpe_dbus_introspect.pp
       - Copy to check_murmur to /usr/lib64/nagios/plugins
       - Set 'dbus=system' in mumble-server.ini
       - Copy associated dbus-murmurd.conf to /etc/dbus-1/system.d/
