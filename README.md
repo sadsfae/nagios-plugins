@@ -44,6 +44,8 @@ This is a collection of miscellaneous Nagios plugins.
          - perl-Nagios-Plugin
          - perl-CGI
          - perl-Net-DBus
+      - selinux policy modules:
+         - nrpe_murmur.pp, nrpe_dbus_murmur.pp, nrpe_dbus_introspect.pp
    * __Installation:__
       - Apply selinux policies (DBUS is an AVC minefield)
          * `semodule -i nrpe_murmur.pp`
