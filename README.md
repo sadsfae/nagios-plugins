@@ -1,14 +1,13 @@
 nagios-plugins
 ===================
 
-This is a collection of miscellaneous Nagios plugins.
+This is a collection of miscellaneous Nagios plugins.\s\s
+See plugin directory README.md for requirements and installation information. 
 
 **nagios-plugin-check-libvirt**
    - Checks Sample Output of virsh list --all for running VM's
    - Errors when a VM is in a shutdown state
    - Original Credit: Karl Rink <krink@csun.edu>
-   * __Requirements and Installation:__
-      - See directory README.md_
    * __Sample Output__
       - `hosts:3 OK:3 WARN:0 CRIT:0 - host01:running host02:running host03:running`
 
@@ -16,8 +15,6 @@ This is a collection of miscellaneous Nagios plugins.
    - Checks mdadm Linux RAID status
    - Displays status if in check or rebuild state
    - Original credit: Sebastian Grewe
-   * __Requirements and Installation:__ 
-      - See directory README.md
    * __Sample Output__
       - `OK - Checked 1 arrays`
 
@@ -25,8 +22,6 @@ This is a collection of miscellaneous Nagios plugins.
    - Checks status of a local mumble server, used with nrpe
    - Displays status and number of connected users via DBUS
    - Modified from: http://blog.ip.v4.me.uk/mumble-murmur-nagios-plugin/
-   * __Requirements and Installation:__
-      - See directory README.md
    * __Sample Output__
       - `MURMUR OK - Current Users = 3`
 ```
