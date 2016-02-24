@@ -1,8 +1,8 @@
 nagios-plugins
 ===================
 
-This is a collection of miscellaneous Nagios plugins.\s\s
-See plugin directory README.md for requirements and installation information. 
+This is a collection of miscellaneous Nagios plugins.
+   - See plugin directory README.md for requirements/install information. 
 
 **nagios-plugin-check-libvirt**
    - Checks Sample Output of virsh list --all for running VM's
