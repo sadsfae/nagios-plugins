@@ -61,8 +61,8 @@ This is a collection of miscellaneous Nagios plugins.
       - Reboot (or restart DBUS without rebooting somehow)
       - Use via nrpe: /etc/nagios/nrpe.cfg
          * `command[check_murmur]=/usr/lib64/nagios/plugins/check_murmur`
-    * __Output__
-        - `MURMUR OK | users=3;;`
+   * __Output__
+      - `MURMUR OK | users=3;;`
 ```
 ├── nagios-plugin-check-libvirt
 │   ├── check_libvirt
