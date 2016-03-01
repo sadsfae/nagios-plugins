@@ -17,3 +17,4 @@ nagios-plugin-check-madm
          * `command[check_raid]=/usr/lib64/nagios/plugins/check_raid`
    * __Output__
       - `OK - Checked 1 arrays`
+      - `OK - Checked 1 arrays, check : 5.9%`

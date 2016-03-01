@@ -15,6 +15,7 @@ This is a collection of miscellaneous Nagios plugins.
    - Displays status if in check or rebuild state
    * __Sample Output__
       - `OK - Checked 1 arrays`
+      - `OK - Checked 1 arrays, check : 5.9%`
 
 **nagios-plugin-check-mumble**
    - Checks status of a local mumble server, used with nrpe
